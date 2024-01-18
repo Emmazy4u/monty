@@ -6,9 +6,9 @@ int opcode_check(char *opcode, unsigned int line_num)
 	char list[] = {"push", "pall","pint", "pop", "swap", "add"};
 	for (i = 0; list[i] != NULL; i++)
 	{
-		if (strcmp(opcode, list) == 0)
+		if (strcmp(opcode, list[i]) == 0)
 		{
-			return (i + 1);
+			return (i);
 		}
 		else
 		{
