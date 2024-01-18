@@ -1,3 +1,5 @@
+#include "monty.h"
+
 int is_int(const char *str)
 {
 	if (*str == '\0')
@@ -6,7 +8,7 @@ int is_int(const char *str)
 	}
 	while (*str)
 	{
-		if (!isdigit(*str))
+		if (!(isdigit(*str)))
 		{
 			return (0);
 		}

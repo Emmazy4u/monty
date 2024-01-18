@@ -26,12 +26,12 @@ void read_exec(const char *filepath)
 		if (opcode != NULL)
 		{
 			status = opcode_check(opcode, count);
-			if (argument == NULL | !(is_int(argument)))
+			if (argument == NULL || !(is_int(argument)))
 			{
 				fprintf(stderr, "L%d: usage: push integer", count);
 				exit(EXIT_FAILURE);
 			}
-			opcode_exec(status, atoi(argument), count);
+			opcode_exec(status, count);
 		}
 		
 	}
