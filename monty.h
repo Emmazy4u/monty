@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -48,7 +50,7 @@ int is_int(const char *str);
 void read_exec(const char *filepath);
 int opcode_check(char *opcode, unsigned int line_num);
 void opcode_exec(unsigned int status, unsigned int count);
-void push(stack_t **stack, unsigned int line_number);
-stack_t *new_stack(int argument)
+stack_t *new_stack(int argument);
+int is_int(const char *str);
 
 #endif
