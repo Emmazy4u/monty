@@ -1,6 +1,6 @@
 #include "monty.h"
 
-char *argument;
+int argument;
 
 /**
  * readfile - reads the file passed into the program
@@ -10,7 +10,7 @@ char *argument;
 void read_file(const char *filepath)
 {
 	FILE *file;
-	char readline[260], *opcode;
+	char readline[260], *opcode, *arg;
 	unsigned int count, index;
 	int arg_status;
 
@@ -25,11 +25,11 @@ void read_file(const char *filepath)
 	{
 		count++;
 		opcode = strtok(readline, " \t\n");
-		argument = strtok(NULL, " \t\n");
+		arg = strtok(NULL, " \t\n");
 		if (opcode != NULL)
 		{
 			index = opcode_check(opcode, count);
-			arg_status = arg_check(index, argument);
+			arg_status = arg_check(index, arg);
 			if (arg_status > 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", count);
@@ -41,7 +41,10 @@ void read_file(const char *filepath)
 				exit(EXIT_FAILURE);
 			}
 			else
+			{
+				argument = atoi(arg);
 				opcode_exec(index, count);
+			}
 		}
 	}
 }
