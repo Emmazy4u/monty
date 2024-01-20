@@ -1,9 +1,8 @@
 #include "monty.h"
 
-stack_t *head = NULL;
-
 void opcode_exec(unsigned int status, unsigned int count)
 {
+	stack_t *head = NULL;
 	instruction_t instructions[] = {{"push", push},
 								{"pall", pall},
 								{"pint", pint},

@@ -1,5 +1,7 @@
 #include "monty.h"
 
+char *argument;
+
 /**
  * readfile - reads the file passed into the program
  * @filepath: the file argv[0] passed as parameter
@@ -8,7 +10,7 @@
 void read_file(const char *filepath)
 {
 	FILE *file;
-	char readline[260], *opcode, *argument;
+	char readline[260], *opcode;
 	unsigned int count, index;
 	int arg_status;
 
