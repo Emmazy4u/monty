@@ -15,7 +15,7 @@ void read_file(const char *filepath)
 	file = fopen(filepath, "r");
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", filepath);
+		fprintf(stderr, "Error: Can't open file %s\n", filepath);
 		exit(EXIT_FAILURE);
 	}
 	while (fgets(readline, sizeof(readline), file) != NULL)
@@ -28,7 +28,7 @@ void read_file(const char *filepath)
 			index = opcode_check(opcode, count);
 			if (argument == NULL || !(is_int(argument)))
 			{
-				fprintf(stderr, "L%d: usage: push integer", count);
+				fprintf(stderr, "L%d: usage: push integer\n", count);
 				exit(EXIT_FAILURE);
 			}
 			opcode_exec(index, count);

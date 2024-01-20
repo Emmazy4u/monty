@@ -41,5 +41,11 @@ void read_file (const char *filepath);
 int opcode_check(char *opcode, unsigned int line_num);
 int is_int(const char *str);
 void opcode_exec(unsigned int status, unsigned int count);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 
 #endif
