@@ -10,6 +10,7 @@ void read_file(const char *filepath)
 	FILE *file;
 	char readline[260], *opcode, *argument;
 	unsigned int count, index;
+	int arg_status;
 
 	count = 0;
 	file = fopen(filepath, "r");
@@ -26,13 +27,19 @@ void read_file(const char *filepath)
 		if (opcode != NULL)
 		{
 			index = opcode_check(opcode, count);
-			if (argument == NULL || !(is_int(argument)))
+			arg_status = arg_check(index, argument);
+			if (arg_status > 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", count);
 				exit(EXIT_FAILURE);
 			}
-			opcode_exec(index, count);
+			else if (arg_status < 0)
+			{
+				fprintf(stderr, "L%d: %s: requires no arg.\n", count, opcode);
+				exit(EXIT_FAILURE);
+			}
+			else
+				opcode_exec(index, count);
 		}
-		
 	}
 }
