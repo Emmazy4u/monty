@@ -7,5 +7,5 @@ stack_t *new_stack(void)
 	node = malloc(sizeof(stack_t));
 	node->prev = NULL;
 	node->next = NULL;
-	return (node)
+	return (node);
 }

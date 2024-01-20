@@ -4,15 +4,15 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	extern char argument;
 	stack_t *top, *temp;
-	(void)line_number;
 
+	(void)line_number;
 	printf("push entered\n");
 	if (*stack == NULL)
 	{
 		*stack = new_stack();
-		*stack->n = argument;
-		*stack->prev = NULL;
-		*stack->next = NULL;
+		(*stack)->n = argument;
+		(*stack)->prev = NULL;
+		(*stack)->next = NULL;
 	}
 	else
 	{
@@ -30,9 +30,9 @@ void push(stack_t **stack, unsigned int line_number)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number;
-	stack_t *top, *temp;
+	stack_t *top;
 
+	(void)line_number;
 	printf("pall entered\n");
 	if (*stack != NULL)
 	{
@@ -47,7 +47,9 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", top->n);
 	}
 	else
+	{
 		;
+	}
 }
 
 void pint(stack_t **stack, unsigned int line_number)
