@@ -1,6 +1,6 @@
 #include "monty.h"
 
-//"push", "pall","pint", "pop", "swap", "add"
+stack_t *head = NULL;
 
 void opcode_exec(unsigned int status, unsigned int count)
 {

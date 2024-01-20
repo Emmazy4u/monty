@@ -37,20 +37,9 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-stack_t *head = NULL;
-
-void pop(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-void pint(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-void push(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-void pall(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-void swap(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-void add(char *opcode, void (*f)(stack_t **stack, unsigned int line_number));
-
-int is_int(const char *str);
-void read_exec(const char *filepath);
+void read_file (const char *filepath);
 int opcode_check(char *opcode, unsigned int line_num);
-void opcode_exec(unsigned int status, unsigned int count);
-stack_t *new_stack(int argument);
 int is_int(const char *str);
+void opcode_exec(unsigned int status, unsigned int count);
 
 #endif
