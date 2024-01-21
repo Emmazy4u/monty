@@ -13,6 +13,7 @@ void read_file(const char *filepath)
 	char readline[260], *opcode, *arg;
 	unsigned int count, index;
 	int arg_status;
+	extern stack_t *head, *ptr;
 
 	count = 0;
 	file = fopen(filepath, "r");
@@ -46,5 +47,12 @@ void read_file(const char *filepath)
 				opcode_exec(index, count);
 			}
 		}
+	}
+	ptr = head;
+	printf("node content is:");
+	while (ptr->next != NULL)
+	{
+		printf("%d", ptr->next);
+		ptr = ptr->next;
 	}
 }
