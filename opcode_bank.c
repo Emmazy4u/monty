@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * push - pushes the user typed argument into the stack
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void push(stack_t **stack, unsigned int line_number)
 {
 	extern int argument;
@@ -21,6 +27,12 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pall - prints all the argument available in the stack
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void pall(stack_t **stack, unsigned int line_number)
 {
 	if (*stack != NULL && line_number > 1)
@@ -40,6 +52,12 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pint - prints the value at the top of the stack
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void pint(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
@@ -64,6 +82,12 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 */
 
+/**
+ * pop - removes the top element of the stack
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void pop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
@@ -95,6 +119,12 @@ void pop(stack_t **stack, unsigned int line_number)
 }
 */
 
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void swap(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
@@ -116,6 +146,12 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 */
 
+/**
+ * add - adds the top two elements of the stack.
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
 void add(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
@@ -141,3 +177,15 @@ void add(stack_t **stack, unsigned int line_number)
     (*stack)->n = sum;
 }
 */
+
+/**
+ * nop - doesn’t do anything
+ * @stack: pointer to the stack pointer
+ * @line_number: line number being read
+ * 
+*/
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
