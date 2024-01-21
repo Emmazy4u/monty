@@ -8,6 +8,10 @@
 */
 void push(stack_t **stack, unsigned int line_number)
 {
+	printf("entered push\n");
+	(void)stack;
+	(void)line_number;
+	/*
 	extern int argument;
 	stack_t *new_node;
 
@@ -16,15 +20,18 @@ void push(stack_t **stack, unsigned int line_number)
     new_node->prev = NULL;
 	if (*stack == NULL && line_number == 1)
 	{
+		printf("entered if in push");
 		*stack = new_node;
         new_node->next = NULL;
 	}
 	else
 	{
+		printf("entered else in push");
 		new_node->next = *stack;
         (*stack)->prev = new_node;
         *stack = new_node;
 	}
+	*/
 }
 
 /**
@@ -35,7 +42,12 @@ void push(stack_t **stack, unsigned int line_number)
 */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	if (*stack != NULL && line_number > 1)
+	printf("entered pall");
+	(void)stack;
+	(void)line_number;
+	printf("pall ended");
+}
+/*	if (*stack != NULL && line_number > 1)
 	{
 		stack_t *step;
 
@@ -51,7 +63,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		;
 	}
 }
-
+*/
 /**
  * pint - prints the value at the top of the stack
  * @stack: pointer to the stack pointer

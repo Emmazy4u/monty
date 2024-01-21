@@ -50,5 +50,6 @@ void add(stack_t **stack, unsigned int line_number);
 int arg_check(int index, char *arg);
 stack_t *new_stack(void);
 void nop(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t **stack);
 
 #endif

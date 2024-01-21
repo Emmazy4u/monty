@@ -30,7 +30,9 @@ void read_file(const char *filepath)
 		arg = strtok(NULL, " \t\n");
 		if (opcode != NULL)
 		{
+			printf("cheking opcode...\n");
 			index = opcode_check(opcode, count);
+			printf("checking argument...\n");
 			arg_status = arg_check(index, arg);
 			if (arg_status > 0)
 			{
@@ -44,9 +46,12 @@ void read_file(const char *filepath)
 			}
 			else
 			{
+				printf("check passed\n");
+				printf("now calling exec\n");
 				argument = atoi(arg);
 				opcode_exec(index, count, &head);
 			}
 		}
 	}
+	free_stack(&head);
 }
