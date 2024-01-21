@@ -3,58 +3,42 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	extern int argument;
-	stack_t **top_push, *new_node;
+	stack_t *new_node;
 
-	printf("push entered\n");
-	if (line_number == 1)
+	new_node = new_stack();
+	new_node->n = argument;
+    new_node->prev = NULL;
+	if (*stack == NULL && line_number == 1)
 	{
-		top_push = stack;
-		(*top_push)->n = argument;
-		printf("if statement & new stack value: %d\n", (*top_push)->n);
-		(*top_push)->prev = NULL;
-		(*top_push)->next = NULL;
-		
+		*stack = new_node;
+        new_node->next = NULL;
 	}
 	else
 	{
-		printf("else statement entered\n");
-		top_push = stack;
-		while((*top_push)->next != NULL)
-			*top_push = (*top_push)->next;
-		new_node = new_stack();
-		new_node->n = argument;
-		printf("new_node n changed to: %d\n", new_node->n);
-		new_node->prev = *top_push;
-		new_node->next = NULL;
-		(*top_push)->next = new_node;
-		*top_push = NULL;
+		new_node->next = *stack;
+        (*stack)->prev = new_node;
+        *stack = new_node;
 	}
 }
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	/*stack_t *top;*/
-	(void)stack;
-	(void)line_number;
-}
-	/*
-	printf("pall entered\n");
-	*/
-	/*
-	if (*stack != NULL)
+	if (*stack != NULL && line_number > 1)
 	{
-		top = *stack;
-		while(top->next != NULL)
-			top = top->next;
-		while(top->prev != NULL)
+		stack_t *step;
+
+		step = *stack;
+		while (step != NULL)
 		{
-			printf("%d\n", top->n);
-			top = top->prev;
+			printf("%d\n", step->n);
+			step = step->next;
 		}
-		printf("%d\n", top->n);
+	}
+	else
+	{
+		;
 	}
 }
-*/
 
 void pint(stack_t **stack, unsigned int line_number)
 {

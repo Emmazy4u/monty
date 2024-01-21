@@ -1,8 +1,7 @@
 #include "monty.h"
 
-void opcode_exec(unsigned int status, unsigned int count)
+void opcode_exec(unsigned int status, unsigned int count, stack_t **head)
 {
-	stack_t *head = new_stack();
 	instruction_t instructions[] = {{"push", push},
 								{"pall", pall},
 								{"pint", pint},
@@ -11,5 +10,5 @@ void opcode_exec(unsigned int status, unsigned int count)
 								{"add", add}
 								};
 
-	instructions[status].f(&head, count);
+	instructions[status].f(head, count);
 }
