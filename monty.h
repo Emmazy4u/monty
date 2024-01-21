@@ -49,6 +49,6 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 int arg_check(int index, char *arg);
 stack_t *new_stack(void);
-nop(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 #endif
