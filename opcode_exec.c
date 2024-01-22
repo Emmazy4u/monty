@@ -15,7 +15,8 @@ void opcode_exec(unsigned int status, unsigned int count, stack_t **head)
 								{"pint", pint},
 								{"pop", pop},
 								{"swap", swap},
-								{"add", add}
+								{"add", add},
+								{"nop", nop}
 								};
 
 	instructions[status].f(head, count);

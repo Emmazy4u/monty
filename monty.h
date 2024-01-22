@@ -33,11 +33,11 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-		void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void read_file (const char *filepath);
+void read_file(const char *filepath);
 int opcode_check(char *opcode, unsigned int line_num);
 int is_int(const char *str);
 void opcode_exec(unsigned int status, unsigned int count, stack_t **head);
@@ -51,5 +51,6 @@ int arg_check(int index, char *arg);
 stack_t *new_stack(void);
 void nop(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
+int arg_recheck(char *opcode, int count, int arg_status, char *arg);
 
 #endif

@@ -2,7 +2,7 @@
 
 /**
  * new_stack - for creating a new stack or node
- * 
+ *
  * Return: returns pointer to the created stack
 */
 stack_t *new_stack(void)
